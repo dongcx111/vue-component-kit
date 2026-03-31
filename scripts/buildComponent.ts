@@ -174,6 +174,9 @@ const baseOptions: InlineConfig = {
     "build:done": async (bundle) => {
       await moveAndDeleteCssBuildDone(bundle);
       await copyFile(pkgJsonFilePath, join(out, "package.json"));
+
+      const readmeFilePath = resolve(pkgPath, "README.md");
+      await copyFile(readmeFilePath, join(out, "README.md"));
     },
   },
 };

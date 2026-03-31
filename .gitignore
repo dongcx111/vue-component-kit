@@ -35,3 +35,9 @@ pnpm-debug.log*
 *.log
 *.local
 .cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.ssl-bypass

@@ -7,5 +7,5 @@
     "vue-component-kit": "0.0.0",
     "play": "0.0.1-alpha.1"
   },
-  "changesets": []
+  "changesets": ["blue-bears-start"]
 }

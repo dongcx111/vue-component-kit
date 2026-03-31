@@ -1,6 +1,6 @@
 {
   "name": "vue-component-kit",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "A Component Library for Vue 3",
   "keywords": [
     "component library",
@@ -63,8 +63,8 @@
     "./*": "./*"
   },
   "dependencies": {
-    "@vue-component-kit/components": "workspace:^1.0.0-alpha.1",
-    "@vue-component-kit/shared": "workspace:^1.0.0-alpha.1"
+    "@vue-component-kit/components": "workspace:^1.0.0-alpha.0",
+    "@vue-component-kit/shared": "workspace:^1.0.0-alpha.0"
   },
   "peerDependencies": {
     "@vueuse/core": "catalog:",

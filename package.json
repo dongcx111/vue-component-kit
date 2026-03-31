@@ -17,9 +17,10 @@
     "prepare": "husky",
     "commit": "git-cz",
     "changeset": "changeset",
-    "version": "changeset version",
+    "changeset:version": "changeset version",
     "exit": "changeset pre exit",
-    "alpha": "changeset pre enter alpha"
+    "alpha": "changeset pre enter alpha",
+    "changelogen": "changelogen --output"
   },
   "dependencies": {
     "@vueuse/core": "catalog:",
@@ -36,6 +37,7 @@
     "@vitejs/plugin-vue": "^6.0.5",
     "@vitest/coverage-v8": "4.1.2",
     "@vue/test-utils": "^2.4.6",
+    "changelogen": "^0.6.2",
     "commitizen": "^4.3.1",
     "cz-git": "^1.12.0",
     "fs-extra": "^11.3.4",

@@ -93,7 +93,7 @@ export default defineConfig({
       { value: "docs", name: "docs:     📝  Documentation only changes", emoji: ":memo:" },
       {
         value: "style",
-        name: "style:    💄  Changes that do not affect the meaning of the code",
+        name: "style:    🎨  Changes that do not affect the meaning of the code",
         emoji: ":lipstick:",
       },
       {
@@ -118,12 +118,12 @@ export default defineConfig({
       },
       {
         value: "ci",
-        name: "ci:       🎡  Changes to our CI configuration files and scripts",
+        name: "ci:       🤖  Changes to our CI configuration files and scripts",
         emoji: ":ferris_wheel:",
       },
       {
         value: "chore",
-        name: "chore:    🔨  Other changes that don't modify src or test files",
+        name: "chore:    🏡  Other changes that don't modify src or test files",
         emoji: ":hammer:",
       },
       { value: "revert", name: "revert:   ⏪️  Reverts a previous commit", emoji: ":rewind:" },

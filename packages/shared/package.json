@@ -1,0 +1,22 @@
+{
+  "name": "@vue-component-kit/shared",
+  "version": "0.0.0",
+  "description": "internal utils shared across packages",
+  "keywords": [
+    "component",
+    "shared",
+    "utils",
+    "vue"
+  ],
+  "license": "MIT",
+  "author": "dongcx111",
+  "files": [
+    "index.mjs",
+    "@vue-component-kit/shared"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "index.cjs",
+  "module": "index.ts",
+  "packageManager": "pnpm@10.33.0"
+}

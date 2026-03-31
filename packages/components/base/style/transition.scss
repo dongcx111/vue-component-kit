@@ -1,0 +1,25 @@
+$slidTypeList: (
+  "up": 20px,
+  "left": -20px,
+  "right": 20px,
+);
+
+@each $slidType, $slidDistance in $slidTypeList {
+  .slide-#{$slidType}-fade-enter-active {
+    transition: all 1.5s ease-out;
+  }
+
+  .slide-#{$slidType}-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .slide-#{$slidType}-fade-enter-from,
+  .slide-#{$slidType}-fade-leave-to {
+    @if $slidType == "up" {
+      transform: translateY($slidDistance);
+    } @else {
+      transform: translateX($slidDistance);
+    }
+    opacity: 0;
+  }
+}

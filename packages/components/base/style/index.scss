@@ -1,0 +1,16 @@
+@use "./theme.scss" as *;
+@use "./transition.scss" as *;
+@use "sass:map";
+
+@each $theme in $themes {
+  $themeName: map.get($theme, "name");
+  .#{$themeName} {
+    @each $type, $map in $theme {
+      @if $type != "name" {
+        @each $key, $value in $map {
+          --color-#{$type}-#{$key}: #{$value};
+        }
+      }
+    }
+  }
+}

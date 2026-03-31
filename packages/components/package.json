@@ -1,0 +1,15 @@
+{
+  "name": "@vue-component-kit/components",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@vue-component-kit/shared": "workspace:^1.0.0-alpha.1",
+    "animate.css": "^4.1.1"
+  },
+  "packageManager": "pnpm@10.32.1"
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "types": [],
+    "paths": {
+      "@vue-component-kit/components": ["packages/components"],
+      "@vue-component-kit/components/*": ["packages/components/*"],
+      "@vue-component-kit/shared": ["packages/shared"],
+      "@vue-component-kit/shared/*": ["packages/shared/*"],
+      "vue-component-kit": ["packages/vue-component-kit"],
+      "vue-component-kit/*": ["packages/vue-component-kit/*"]
+    }
+  }
+}

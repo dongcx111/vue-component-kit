@@ -1,0 +1,3 @@
+@function get-color($type, $key) {
+  @return var(--color-#{$type}-#{$key});
+}

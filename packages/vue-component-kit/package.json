@@ -1,0 +1,79 @@
+{
+  "name": "vue-component-kit",
+  "version": "0.0.0",
+  "description": "A Component Library for Vue 3",
+  "keywords": [
+    "component library",
+    "ui",
+    "ui framework",
+    "vue",
+    "vue component",
+    "vue-component-kit"
+  ],
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "sideEffects": [
+    "theme/**/*.css",
+    "es/components/hooks/**/*.js",
+    "lib/components/hooks/**/*.cjs"
+  ],
+  "main": "lib/index.cjs",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.cjs"
+    },
+    "./es": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js"
+    },
+    "./lib": {
+      "types": "./es/index.d.ts",
+      "require": "./lib/index.cjs"
+    },
+    "./es/*.js": {
+      "types": "./es/*.d.ts",
+      "import": "./es/*.js"
+    },
+    "./es/*": {
+      "types": [
+        "./es/*.d.ts",
+        "./es/*/index.d.ts"
+      ],
+      "import": "./es/*.js"
+    },
+    "./lib/*.js": {
+      "types": "./es/*.d.ts",
+      "require": "./lib/*.cjs"
+    },
+    "./lib/*": {
+      "types": [
+        "./es/*.d.ts",
+        "./es/*/index.d.ts"
+      ],
+      "require": "./lib/*.cjs"
+    },
+    "./theme/*": {
+      "import": "./theme/*.css"
+    },
+    "./*": "./*"
+  },
+  "dependencies": {
+    "@vue-component-kit/components": "workspace:^1.0.0-alpha.1",
+    "@vue-component-kit/shared": "workspace:^1.0.0-alpha.1"
+  },
+  "peerDependencies": {
+    "@vueuse/core": "catalog:",
+    "vue": "catalog:"
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "packageManager": "pnpm@10.32.1"
+}

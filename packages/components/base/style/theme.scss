@@ -1,0 +1,38 @@
+@use "./vars.scss" as *;
+
+$light: (
+  "name": "light",
+  "font": (
+    "primary": $rhino-2,
+    "secondary": $waikawa-gray,
+  ),
+  "border": (
+    "primary": $periwinkle-gray,
+  ),
+  "shadow": (
+    "primary": $solitude,
+  ),
+  "background": (
+    "tertiary": $selago,
+  ),
+);
+
+$dark: (
+  "name": "dark",
+  "font": (
+    "primary": $white,
+    "secondary": $regent-st-blue,
+  ),
+  "border": (
+    "primary": $oxford-blue,
+    "reverse": $white,
+  ),
+  "shadow": (
+    "primary": $woodsmoke,
+  ),
+  "background": (
+    "tertiary": $mirage-2,
+  ),
+);
+
+$themes: $light, $dark;

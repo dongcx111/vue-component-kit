@@ -1,0 +1,162 @@
+@use "../base/style/functions.scss" as *;
+@use "../base/style/vars.scss" as *;
+@use "sass:color";
+
+$fontPrimary: get-color("font", "primary");
+$fontSecondary: get-color("font", "secondary");
+$borderPrimary: get-color("border", "primary");
+$borderReverse: get-color("border", "reverse");
+$shadowPrimary: get-color("shadow", "primary");
+
+.vck-timeline {
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+  font-family:
+    "Heebo",
+    "Helvetica Neue",
+    Source Sans Pro,
+    Helvetica,
+    Arial,
+    sans-serif;
+  color: $fontPrimary;
+
+  &__left {
+    &__time {
+      font-size: 14px;
+      user-select: none;
+      color: $fontSecondary;
+    }
+  }
+
+  &__center {
+    position: relative;
+    flex: 0 0 auto;
+    margin-right: 30px;
+    margin-left: 30px;
+
+    &__default {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 100%;
+        background-size: cover;
+        user-select: none;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        color: $fontPrimary;
+        font-weight: 600;
+        box-shadow: 0 1px 5px 0 $shadowPrimary;
+      }
+    }
+
+    &__line {
+      display: inline-block;
+      margin-top: 32px;
+      width: 1px;
+      height: 100%;
+      background-color: $borderPrimary;
+    }
+
+    &__is-last {
+      background: linear-gradient(
+        $borderPrimary 50%,
+        color-mix(in srgb, $borderPrimary 0%, transparent)
+      );
+    }
+  }
+
+  &__right {
+    flex: 1;
+    padding-bottom: 40px;
+
+    &__information {
+      display: flex;
+      margin-top: 4px;
+      flex-direction: row;
+
+      &__category {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        align-self: flex-start;
+        flex: 0 0 auto;
+        margin-right: 10px;
+        padding: 0 12px;
+        font-size: 12px;
+        line-height: 22px;
+        color: #fff;
+        border-radius: 100px;
+        text-transform: uppercase;
+        font-family: Heebo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        user-select: none;
+        box-shadow: 0 1px 5px 0 $shadowPrimary;
+      }
+
+      &__time {
+        font-size: 14px;
+        user-select: none;
+        color: $fontSecondary;
+      }
+
+      &__title {
+        flex: 1;
+        margin: 0 0 4px 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+
+    &__thumbnail {
+      box-sizing: border-box;
+      margin: 6px 0 12px;
+      max-width: 100%;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 6px;
+      user-select: none;
+      border-color: $borderReverse;
+      box-shadow: 0 1px 5px 0 $shadowPrimary;
+
+      &--is-visible {
+        animation: zoomIn 0.4s;
+      }
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 26px;
+      margin: 0;
+      color: $fontSecondary;
+    }
+  }
+}
+
+// media query
+@media screen and (max-width: 750px) and (min-width: 320px) {
+  .vck-timeline {
+    &__right {
+      &__information {
+        flex-direction: column;
+
+        &__title,
+        &__description {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}

@@ -10,8 +10,15 @@
     "vue component",
     "vue-component-kit"
   ],
+  "bugs": {
+    "url": "https://github.com/dongcx111/vue-component-kit/issues"
+  },
   "license": "MIT",
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongcx111/vue-component-kit.git"
+  },
   "type": "module",
   "sideEffects": [
     "theme/**/*.css",
@@ -61,6 +68,9 @@
       "import": "./theme/*.css"
     },
     "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@vue-component-kit/components": "workspace:^1.0.0-alpha.0",

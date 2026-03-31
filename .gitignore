@@ -41,3 +41,6 @@ pnpm-debug.log*
 .env.local
 .env.*.local
 .env.ssl-bypass
+
+# npm publish
+.npmrc

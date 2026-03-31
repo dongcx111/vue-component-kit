@@ -177,6 +177,9 @@ const baseOptions: InlineConfig = {
 
       const readmeFilePath = resolve(pkgPath, "README.md");
       await copyFile(readmeFilePath, join(out, "README.md"));
+
+      const npmrcFilePath = resolve(pkgPath, ".npmrc");
+      await copyFile(npmrcFilePath, join(out, ".npmrc"));
     },
   },
 };

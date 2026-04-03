@@ -9,7 +9,7 @@ import {
   type TsdownBundle,
 } from "tsdown";
 import Vue from "unplugin-vue/rolldown";
-import { FormatEnum } from "./plugin";
+import { FormatEnum } from "./utils";
 import { exists, move, remove } from "fs-extra";
 import { writeFile, mkdir, copyFile } from "node:fs/promises";
 import { browserslistToTargets, transform } from "lightningcss";

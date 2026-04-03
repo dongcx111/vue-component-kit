@@ -10,12 +10,12 @@ const scopes = [...getPackages("packages"), "docs", "play"];
 const gitStatus = execSync("git status --porcelain || true").toString().trim().split("\n");
 
 const scopeComplete = gitStatus
-  .find((r) => ~r.indexOf("M  packages"))
+  .find((r) => ~r.indexOf("A  packages"))
   ?.replace(/\//g, "%%")
   ?.match(/packages%%((\w|-)*)/)?.[1];
 
 const subjectComplete = gitStatus
-  .find((r) => ~r.indexOf("M  packages/components"))
+  .find((r) => ~r.indexOf("A  packages/components"))
   ?.replace(/\//g, "%%")
   ?.match(/packages%%components%%((\w|-)*)/)?.[1];
 
@@ -134,9 +134,8 @@ export default defineConfig({
     aiNumber: 1,
     themeColorCode: "",
     scopes: scopeComplete,
-    allowCustomScopes: true,
+    allowCustomScopes: false,
     allowEmptyScopes: false,
-    customScopesAlias: "__default__",
     emptyScopesAlias: "empty",
     upperCaseSubject: null,
     markBreakingChangeMode: true,

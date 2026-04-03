@@ -1,5 +1,5 @@
 import { useDark, useMouse, useToggle, type UseDarkReturn } from "@vueuse/core";
-import { nextTick, shallowReadonly } from "vue";
+import { nextTick, shallowReadonly, onScopeDispose } from "vue";
 
 const viewTransitionStyle = `   ::view-transition-old(root),
                                 ::view-transition-new(root) {
@@ -117,6 +117,13 @@ export const useThemeChange = (options: UseThemeChangeOptions = {}): UseThemeCha
   });
 
   const toggleDark = useToggle(isDark);
+
+  onScopeDispose(() => {
+    if (stylesheet) {
+      document.head.removeChild(stylesheet);
+      stylesheet = null;
+    }
+  });
 
   return {
     isDark: shallowReadonly(isDark),

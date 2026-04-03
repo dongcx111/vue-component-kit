@@ -10,6 +10,12 @@ export const outDir = resolve(import.meta.dirname, "..", "dist");
 export const modules = ["esm", "cjs"] as const;
 export type ModuleFormat = (typeof modules)[number];
 
+export enum FormatEnum {
+  ESM = "esm",
+  ES = "es",
+  CJS = "cjs",
+}
+
 export async function run(command: string): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     const [cmd, ...args] = command.split(" ");

@@ -44,3 +44,9 @@ pnpm-debug.log*
 
 # npm publish
 .npmrc
+
+# agents
+.agents/
+.trae
+
+skills-lock.json

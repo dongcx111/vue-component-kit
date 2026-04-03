@@ -3,7 +3,7 @@ import type { InlineConfig, ResolvedConfig, TsdownBundle } from "tsdown";
 import { resolve, join } from "node:path";
 import { root, outDir, getPkgJsonInfo, type ModuleFormat } from "./utils";
 import { copyFile } from "node:fs/promises";
-import { FormatEnum } from "./plugin";
+import { FormatEnum } from "./utils";
 
 const pkgPath = resolve(root, "packages/shared");
 

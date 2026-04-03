@@ -38,17 +38,13 @@
         </div>
         <img
           v-if="thumbnail"
-          :class="[
-            'vck-timeline__right__thumbnail',
-            { 'vck-timeline__right__thumbnail--is-visible': isVisible },
-          ]"
+          class="vck-timeline__right__thumbnail"
           :data-src="thumbnail"
           alt=""
           ref="imgRef"
         />
         <transition name="slide-up-fade">
           <p
-            ref="descriptionRef"
             v-if="description && isVisible"
             class="vck-timeline__right__description"
             v-html="description"
@@ -95,14 +91,11 @@ const loadThumbnail = () => {
   if (!imgRef || !imgRef.value) return;
   imgRef.value.src = imgRef.value.dataset.src || "";
   imgRef.value.onload = () => {
-    requestAnimationFrame(() => {
-      forceReflow();
-    });
+    imgRef.value?.classList.add("loaded");
   };
-};
-
-const forceReflow = () => {
-  return document.body.offsetHeight;
+  imgRef.value.onerror = () => {
+    console.warn(`[${COMPONENT_NAME}]: Image load failed: ${imgRef?.value?.src}`);
+  };
 };
 
 onMounted(() => {

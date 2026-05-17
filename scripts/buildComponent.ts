@@ -156,7 +156,7 @@ const baseOptions: InlineConfig = {
   minify: true,
   unbundle: true,
   deps: {
-    neverBundle: ["@vueuse/core"],
+    neverBundle: ["@vueuse/core", "dompurify"],
   },
   outputOptions(outputOptions, format) {
     if (format === FormatEnum.CJS) {

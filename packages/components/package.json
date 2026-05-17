@@ -11,5 +11,9 @@
     "@vue-component-kit/shared": "workspace:^1.0.0-alpha.0",
     "animate.css": "^4.1.1"
   },
+  "peerDependencies": {
+    "@vueuse/core": "catalog:",
+    "dompurify": "catalog:"
+  },
   "packageManager": "pnpm@10.32.1"
 }

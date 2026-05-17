@@ -22,10 +22,6 @@
     "alpha": "changeset pre enter alpha",
     "changelogen": "changelogen --output"
   },
-  "dependencies": {
-    "@vueuse/core": "catalog:",
-    "vue": "catalog:"
-  },
   "devDependencies": {
     "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.30.0",
@@ -59,6 +55,9 @@
     "vite": "^8.0.3",
     "vitest": "^4.1.2",
     "vue-tsc": "^3.2.6"
+  },
+  "peerDependencies": {
+    "vue": "catalog:"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue,css,scss,md,json}": [

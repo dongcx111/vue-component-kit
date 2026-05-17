@@ -47,7 +47,7 @@
           <p
             v-if="description && isVisible"
             class="vck-timeline__right__description"
-            v-html="description"
+            v-html="purifyDescription"
           ></p>
         </transition>
       </div>
@@ -56,9 +56,9 @@
 </template>
 <script lang="ts" setup>
 import type { TimelineProps, TimelineEmits, TimelineSlots } from "./type";
-import { useSlots, onMounted, useTemplateRef, shallowRef, Transition } from "vue";
+import { useSlots, onMounted, useTemplateRef, shallowRef, Transition, computed } from "vue";
 import { useIntersectionObserver } from "@vueuse/core";
-import { pkgExists } from "@vue-component-kit/shared";
+import DOMPurify from "dompurify";
 
 const COMPONENT_NAME = "VckTimeline";
 defineOptions({
@@ -99,12 +99,6 @@ const loadThumbnail = () => {
 };
 
 onMounted(() => {
-  if (description && !pkgExists("dompurify")) {
-    console.warn(
-      `[${COMPONENT_NAME}]: prop.description is bound using the v-html directive and you should use dompurify to sanitize it, run "npm install dompurify" to install it`,
-    );
-  }
-
   let stopObserver: (() => void) | undefined;
 
   const { stop } = useIntersectionObserver(
@@ -124,6 +118,11 @@ onMounted(() => {
   );
 
   stopObserver = stop;
+});
+
+const purifyDescription = computed(() => {
+  if (!description) return "";
+  return DOMPurify.sanitize(description);
 });
 </script>
 
